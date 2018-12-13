@@ -1,5 +1,5 @@
 public class Node {
-  private int data;
+  private Integer data;
   private Node next,prev;
 
   public Node(int setData) { // should the next node be part of the constructor?

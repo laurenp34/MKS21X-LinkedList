@@ -14,14 +14,14 @@ public class MyLinkedList {
   }
 
   public MyLinkedList() {
-    
+
   }
 
   public int size() {
    return size;
   }
 
-  public boolean add(int value) {
+  public boolean add(Integer value) {
     //need some way to connect the previous node to the new one.
     //i think we would need a method in the Node class that could alter the next node.
     Node toAdd = new Node(value);
