@@ -18,6 +18,10 @@ public class Node {
     prev = setPrev;
   }
 
+  public int getData {
+    return data;
+  }
+
   //
   public boolean hasNext() {
     if (next != null) {
