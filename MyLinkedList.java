@@ -26,8 +26,9 @@ public class MyLinkedList {
 
   public String toString(){
     Node current = start;
-    String output = "";
-    output += "[";
+    String output = "[";
+
+    //boolean cont = true;
 
     while (current.hasNext()) {
       output += current.getData();
@@ -35,8 +36,7 @@ public class MyLinkedList {
       current = current.getNext();
     }
 
-    //String actualOutput = (String) output.subSequence(0,output.length()); // eliminates the extra comma.
-    //actualOutput += "]";
+    output += end.getData();
     return output += "]";
   }
 
@@ -46,6 +46,10 @@ public class MyLinkedList {
     test.add(4);
     test.add(5);
     System.out.println(test);
+
+    Node teeest = new Node(1);
+    MyLinkedList toast = new MyLinkedList(teeest);
+    System.out.println(toast);
   }
 
 }
