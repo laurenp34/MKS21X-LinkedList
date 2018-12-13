@@ -7,6 +7,12 @@ public class MyLinkedList {
    end = first; //????
   }
 
+  public MyLinkedList(int value) {
+    Node firstNode = new Node(value);
+    start = firstNode;
+    end = firstNode;
+  }
+
   public int size() {
    return size;
   }
@@ -15,8 +21,8 @@ public class MyLinkedList {
     //need some way to connect the previous node to the new one.
     //i think we would need a method in the Node class that could alter the next node.
     Node toAdd = new Node(value);
-    toAdd.setPrev(end);
-    end.setNext(toAdd);
+    toAdd.setPrev(end); // setting the element to add's prev to the last node.
+    end.setNext(toAdd); // setting the last node's next element to the node to add.
 
     end = toAdd;
 
@@ -30,12 +36,13 @@ public class MyLinkedList {
 
     //boolean cont = true;
 
-    while (current.hasNext()) {
+    while (current.hasNext()) { // the loop works out perfectly to include everything but the last node.
+      // then, this ensures that you won't have an extra comma at the end.
       output += current.getData();
       output += ", ";
       current = current.getNext();
     }
-
+    //because the loop doesn't include the last node, we add it ourselves (w/o comma!)
     output += end.getData();
     return output += "]";
   }
