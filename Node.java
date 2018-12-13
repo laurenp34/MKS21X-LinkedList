@@ -2,10 +2,14 @@ public class Node {
   private Integer data;
   private Node next,prev;
 
-  public Node(int setData) { // should the next node be part of the constructor?
-    data = setData;
+  public Node(int yum) { // should the next node be part of the constructor?
+    data = yum;
     //next = setNext;
     //prev = setPrev;
+  }
+
+  public Node() {
+
   }
 
   //NOT SURE IF WE WERE SUPPOSED TO DO THIS
@@ -18,9 +22,14 @@ public class Node {
     prev = setPrev;
   }
 
-  public int getData() {
+  public Integer getData() {
     return data;
   }
+
+  public void setData(newData) {
+    data = newData;
+  }
+  })
 
   public Node getNext() {
     return next;
