@@ -44,6 +44,10 @@ public class Node {
     }
   }
 
+  public String toString() {
+    return "" + getData();
+  }
+
   public static void main(String[] args) {
     Node test = new Node(4);
     Node test2 = new Node(2);
