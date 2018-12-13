@@ -5,6 +5,7 @@ public class MyLinkedList {
  public MyLinkedList(Node first) {
    start = first;
    end = first; //????
+   size = 1;
   }
 
   public MyLinkedList(int value) {
@@ -14,19 +15,29 @@ public class MyLinkedList {
   }
 
   public MyLinkedList() {
-
   }
 
   public int size() {
    return size;
   }
 
+//THIS METHOD ADDS THE VALUE TO THE END.
   public boolean add(Integer value) {
     //need some way to connect the previous node to the new one.
     //i think we would need a method in the Node class that could alter the next node.
     Node toAdd = new Node(value);
-    toAdd.setPrev(end); // setting the element to add's prev to the last node.
-    end.setNext(toAdd); // setting the last node's next element to the node to add.
+
+  //special case: adding the value when the list is empty.
+  //this block decides if it is empty.
+    if (start == null && end == null) {
+      start = toAdd;
+
+    } else {
+
+      toAdd.setPrev(end); // setting the element to add's prev to the last node.
+      end.setNext(toAdd); // setting the last node's next element to the node to add.
+
+    }
 
     end = toAdd;
 
