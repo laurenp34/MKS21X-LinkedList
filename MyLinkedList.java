@@ -13,6 +13,10 @@ public class MyLinkedList {
     end = firstNode;
   }
 
+  public MyLinkedList() {
+    
+  }
+
   public int size() {
    return size;
   }
