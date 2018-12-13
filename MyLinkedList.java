@@ -45,6 +45,7 @@ public class MyLinkedList {
     return true;
   }
 
+
   public String toString(){
     Node current = start;
     String output = "[";
@@ -62,16 +63,9 @@ public class MyLinkedList {
     return output += "]";
   }
 
-  public static void main(String[] args) {
-    Node teest = new Node(3);
-    MyLinkedList test = new MyLinkedList(teest);
-    test.add(4);
-    test.add(5);
-    System.out.println(test);
 
-    Node teeest = new Node(1);
-    MyLinkedList toast = new MyLinkedList(teeest);
-    System.out.println(toast);
+  public static void main(String[] args) {
+    
   }
 
 }
