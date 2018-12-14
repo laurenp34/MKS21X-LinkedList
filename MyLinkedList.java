@@ -63,6 +63,8 @@ public class MyLinkedList {
     return output += "]";
   }
 
+
+
   private Node getNthNode(int n) {
 
     Node result = start;
@@ -77,8 +79,10 @@ public class MyLinkedList {
 
   }
 
+
+
   public Integer get(int index) {
-    return 6;
+    return getNthNode(index).getData();
 
   }
 
@@ -89,7 +93,7 @@ public class MyLinkedList {
     teeth.add(1);
     teeth.add(3);
 
-    System.out.println(teeth.getNthNode(1).toString()); // shoudl be 3
+    System.out.println(teeth.get(1)); // shoudl be 3
 
   }
 
