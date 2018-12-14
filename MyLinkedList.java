@@ -98,6 +98,12 @@ public class MyLinkedList {
 
   }
 
+  public boolean contains(Integer value) {
+
+    
+
+  }
+
 
 
 
