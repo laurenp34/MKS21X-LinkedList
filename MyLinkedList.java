@@ -87,13 +87,33 @@ public class MyLinkedList {
   }
 
 
+  public Integer set(int index,Integer value) {
+    Node indexNode = getNthNode(index);
+
+    Integer oldValue = indexNode.getData();
+
+    indexNode.setData(value);
+
+    return oldValue;
+
+  }
+
+
+
+
   public static void main(String[] args) {
 
     MyLinkedList teeth = new MyLinkedList();
     teeth.add(1);
     teeth.add(3);
+    teeth.add(6);
 
-    System.out.println(teeth.get(1)); // shoudl be 3
+    System.out.println(teeth);
+
+    System.out.println(teeth.set(1,4));
+
+    System.out.println(teeth);
+
 
   }
 
