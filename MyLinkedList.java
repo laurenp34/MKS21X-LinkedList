@@ -56,16 +56,41 @@ public class MyLinkedList {
       // then, this ensures that you won't have an extra comma at the end.
       output += current.getData();
       output += ", ";
-      current = current.getNext();
+      current = current.next();
     }
     //because the loop doesn't include the last node, we add it ourselves (w/o comma!)
     output += end.getData();
     return output += "]";
   }
 
+  private Node getNthNode(int n) {
+
+    Node result = start;
+    int index = 1;
+
+    while (index <= n) {
+      result = result.next();
+      index ++;
+    }
+
+    return result;
+
+  }
+
+  public Integer get(int index) {
+    return 6;
+
+  }
+
 
   public static void main(String[] args) {
-    
+
+    MyLinkedList teeth = new MyLinkedList();
+    teeth.add(1);
+    teeth.add(3);
+
+    System.out.println(teeth.getNthNode(1).toString()); // shoudl be 3
+
   }
 
 }
