@@ -26,8 +26,11 @@ public class Node {
     return data;
   }
 
-  public void setData(Integer newData) {
+  public Integer setData(Integer newData) {
+    Integer oldData = data;
+
     data = newData;
+    return oldData;
   }
 
   public Node next() {
@@ -54,8 +57,6 @@ public class Node {
   public static void main(String[] args) {
     Node test = new Node(4);
     Node test2 = new Node(2);
-    test.setNext(test2);
-    System.out.println(test.hasNext());
-    System.out.println(test2.hasNext());
+    System.out.println(test2.setData(3)); // should print 2
   }
 }
