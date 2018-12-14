@@ -26,13 +26,16 @@ public class Node {
     return data;
   }
 
-  public void setData(newData) {
+  public void setData(Integer newData) {
     data = newData;
   }
-  })
 
-  public Node getNext() {
+  public Node next() {
     return next;
+  }
+
+  public Node prev() {
+    return prev;
   }
 
   //
