@@ -170,12 +170,12 @@ public Integer remove (int index) {
 
     //Node current = getNthNode(index);
     Node prevNode = current.prev();
-    System.out.println(prevNode == null);
+    //System.out.println(prevNode == null);
     Node nextNode = current.next();
-    System.out.println(nextNode == null);
+    //System.out.println(nextNode == null);
 
-    //prevNode.setNext(getNthNode(index+1));
-    //nextNode.setPrev(getNthNode(index-1));
+    prevNode.setNext(nextNode);
+    nextNode.setPrev(prevNode);
 
 
   }
