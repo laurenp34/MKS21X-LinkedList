@@ -154,7 +154,8 @@ public void add(int index,Integer value) {
   size ++;
 }
 
-public Integer remove (int index) {
+
+public Integer remove(int index) {
 
   Node current = getNthNode(index);
 
@@ -183,7 +184,14 @@ public Integer remove (int index) {
   size --;
   return current.getData();
 
+}
 
+public boolean remove(Integer value) {
+
+  int index = indexOf(value);
+  remove(index);
+
+  return true;
 
 }
 
@@ -203,12 +211,10 @@ public Integer remove (int index) {
     System.out.println(teeth); // 3, 1, 9, 3, 6
     System.out.println(teeth.size());
 
-    teeth.remove(2);
+    teeth.remove((Integer) 9);
     System.out.println(teeth); // 3, 1, 3, 6
-    teeth.remove(0);
-    System.out.println(teeth); // 1, 3, 6
-    teeth.remove(2);
-    System.out.println(teeth); // 1`, 3
+    teeth.remove((Integer) 3);
+    System.out.println(teeth);// 1, 3, 6
 
   }
 
