@@ -109,8 +109,17 @@ public class MyLinkedList {
     }
 
     return false;
+  }
 
+  public int indexOf(Integer value) {
 
+    for (int i=0;i<size;i++) {
+
+      if (get(i).equals(value)) {
+        return i;
+      }
+    }
+    return -1;
   }
 
 
@@ -131,6 +140,8 @@ public class MyLinkedList {
     System.out.println(teeth.contains(1));
     System.out.println(teeth.contains(4));
 
+    System.out.println(teeth.indexOf(1));
+    System.out.println(teeth.indexOf(3));
 
   }
 
