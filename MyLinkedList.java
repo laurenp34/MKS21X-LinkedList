@@ -50,6 +50,11 @@ public class MyLinkedList {
 
 
   public String toString(){
+
+    if (size() == 0) {
+      return "[]";
+    }
+
     Node current = start;
     String output = "[";
 
@@ -70,7 +75,7 @@ public class MyLinkedList {
 
   private Node getNthNode(int n) {
 
-    if (n >= size()) {
+    if (n >= size() || n < 0) {
       throw new IndexOutOfBoundsException("Index " + n + " is out of bounds.");
     }
 
@@ -90,7 +95,7 @@ public class MyLinkedList {
 
   public Integer get(int index) {
 
-    if (index >= size()) {
+    if (index >= size() || index < 0) {
       throw new IndexOutOfBoundsException("Index " + index + " is out of bounds.");
     }
 
@@ -101,7 +106,7 @@ public class MyLinkedList {
 
   public Integer set(int index,Integer value) {
 
-    if (index >= size()) {
+    if (index >= size() || index < 0) {
       throw new IndexOutOfBoundsException("Index " + index + " is out of bounds.");
     }
 
@@ -142,7 +147,7 @@ public class MyLinkedList {
 public void add(int index,Integer value) {
 
 
-  if (index >= size()) {
+  if (index >= size() || index < 0) {
     throw new IndexOutOfBoundsException("Index " + index + " is out of bounds.");
   }
 
@@ -177,7 +182,7 @@ public void add(int index,Integer value) {
 
 public Integer remove(int index) {
 
-  if (index >= size()) {
+  if (index >= size() || index < 0) {
     throw new IndexOutOfBoundsException("Index " + index + " is out of bounds.");
   }
 
