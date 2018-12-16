@@ -70,6 +70,10 @@ public class MyLinkedList {
 
   private Node getNthNode(int n) {
 
+    if (n >= size()) {
+      throw new IndexOutOfBoundsException("Index " + n + " is out of bounds.");
+    }
+
     Node result = start;
     int index = 1;
 
@@ -205,16 +209,7 @@ public boolean remove(Integer value) {
     teeth.add(3);
     teeth.add(6);
 
-    teeth.add(0,3);
-    System.out.println(teeth); // 3, 1, 3, 6
-    teeth.add(2,9);
-    System.out.println(teeth); // 3, 1, 9, 3, 6
-    System.out.println(teeth.size());
-
-    teeth.remove((Integer) 9);
-    System.out.println(teeth); // 3, 1, 3, 6
-    teeth.remove((Integer) 3);
-    System.out.println(teeth);// 1, 3, 6
+    teeth.get(3);
 
   }
 
