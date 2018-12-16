@@ -100,7 +100,16 @@ public class MyLinkedList {
 
   public boolean contains(Integer value) {
 
-    
+    for (int i=0;i<size;i++) {
+
+      if (get(i).equals(value)) {
+        return true;
+      }
+
+    }
+
+    return false;
+
 
   }
 
@@ -119,6 +128,8 @@ public class MyLinkedList {
     System.out.println(teeth.set(1,4));
 
     System.out.println(teeth);
+    System.out.println(teeth.contains(1));
+    System.out.println(teeth.contains(4));
 
 
   }
