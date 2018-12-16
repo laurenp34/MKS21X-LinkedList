@@ -146,11 +146,42 @@ public void add(int index,Integer value) {
     previous.setNext(toAdd);
     toAdd.setNext(atIndex);
 
+    toAdd.setPrev(previous);
+    atIndex.setPrev(toAdd);
+
   }
 
   size ++;
+}
+
+public Integer remove (int index) {
+
+  Node current = getNthNode(index);
+
+  if (index == 0) {
+    start = getNthNode(1);
+    start.setPrev(null); // did this so it wouldn't mess up future loops.
+
+  } else if (index + 1 == size()) {
+    end = getNthNode(index-1);
+    end.setNext(null);
+
+  } else {
+
+    //Node current = getNthNode(index);
+    Node prevNode = current.prev();
+    System.out.println(prevNode == null);
+    Node nextNode = current.next();
+    System.out.println(nextNode == null);
+
+    //prevNode.setNext(getNthNode(index+1));
+    //nextNode.setPrev(getNthNode(index-1));
 
 
+  }
+
+  size --;
+  return current.getData();
 
 
 
@@ -171,6 +202,13 @@ public void add(int index,Integer value) {
     teeth.add(2,9);
     System.out.println(teeth); // 3, 1, 9, 3, 6
     System.out.println(teeth.size());
+
+    teeth.remove(2);
+    System.out.println(teeth); // 3, 1, 3, 6
+    teeth.remove(0);
+    System.out.println(teeth); // 1, 3, 6
+    teeth.remove(2);
+    System.out.println(teeth); // 1`, 3
 
   }
 
