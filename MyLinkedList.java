@@ -147,7 +147,7 @@ public class MyLinkedList {
 public void add(int index,Integer value) {
 
 
-  if (index >= size() || index < 0) {
+  if (index > size() || index < 0) {
     throw new IndexOutOfBoundsException("Index " + index + " is out of bounds.");
   }
 
@@ -162,7 +162,10 @@ public void add(int index,Integer value) {
     } else {
       start = toAdd;
     }
-  } else { // inthis case there is a current value and a previous value at that index.
+  } else if (index == size()) { // adding to last index.
+    add(value);
+
+  }  else { // inthis case there is a current value and a previous value at that index.
 
     Node atIndex = getNthNode(index);
     //Node previous = getNthNode(index-1);
