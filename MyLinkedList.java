@@ -1,3 +1,6 @@
+import java.util.*;
+import java.io.*;
+
 public class MyLinkedList {
  private int size;
  private Node start,end;
@@ -122,6 +125,37 @@ public class MyLinkedList {
     return -1;
   }
 
+public void add(int index,Integer value) {
+
+  Node toAdd = new Node(value);
+
+  if (index == 0) {
+    if (size > 0) {
+      Node atIndex = getNthNode(index);
+      start = toAdd;
+      start.setNext(atIndex);
+    } else {
+      start = toAdd;
+    }
+  } else { // inthis case there is a current value and a previous value at that index.
+
+    Node atIndex = getNthNode(index);
+    //Node previous = getNthNode(index-1);
+    Node previous = atIndex.prev();
+
+    previous.setNext(toAdd);
+    toAdd.setNext(atIndex);
+
+  }
+
+  size ++;
+
+
+
+
+
+}
+
 
 
 
@@ -132,16 +166,11 @@ public class MyLinkedList {
     teeth.add(3);
     teeth.add(6);
 
-    System.out.println(teeth);
-
-    System.out.println(teeth.set(1,4));
-
-    System.out.println(teeth);
-    System.out.println(teeth.contains(1));
-    System.out.println(teeth.contains(4));
-
-    System.out.println(teeth.indexOf(1));
-    System.out.println(teeth.indexOf(3));
+    teeth.add(0,3);
+    System.out.println(teeth); // 3, 1, 3, 6
+    teeth.add(2,9);
+    System.out.println(teeth); // 3, 1, 9, 3, 6
+    System.out.println(teeth.size());
 
   }
 
