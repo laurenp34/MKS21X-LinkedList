@@ -89,12 +89,22 @@ public class MyLinkedList {
 
 
   public Integer get(int index) {
+
+    if (index >= size()) {
+      throw new IndexOutOfBoundsException("Index " + index + " is out of bounds.");
+    }
+
     return getNthNode(index).getData();
 
   }
 
 
   public Integer set(int index,Integer value) {
+
+    if (index >= size()) {
+      throw new IndexOutOfBoundsException("Index " + index + " is out of bounds.");
+    }
+
     Node indexNode = getNthNode(index);
 
     Integer oldValue = indexNode.getData();
@@ -131,6 +141,12 @@ public class MyLinkedList {
 
 public void add(int index,Integer value) {
 
+
+  if (index >= size()) {
+    throw new IndexOutOfBoundsException("Index " + index + " is out of bounds.");
+  }
+
+
   Node toAdd = new Node(value);
 
   if (index == 0) {
@@ -160,6 +176,10 @@ public void add(int index,Integer value) {
 
 
 public Integer remove(int index) {
+
+  if (index >= size()) {
+    throw new IndexOutOfBoundsException("Index " + index + " is out of bounds.");
+  }
 
   Node current = getNthNode(index);
 
@@ -193,8 +213,11 @@ public Integer remove(int index) {
 public boolean remove(Integer value) {
 
   int index = indexOf(value);
-  remove(index);
+  if (index == -1) {
+    return false; // if value does not appear in list.
+  }
 
+  remove(index);
   return true;
 
 }
