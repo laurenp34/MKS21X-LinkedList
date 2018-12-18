@@ -230,6 +230,20 @@ public boolean remove(Integer value) {
 
 }
 
+public void extend(MyLinkedList other){
+        //in O(1) runtime, move the elements from other onto the end of this
+        //The size of other is reduced to 0
+        //The size of this is now the combined sizes of both original lists
+    if (other.size() > 0) {
+          end = other.getNthNode(0);
+    }
+
+    other.size = 0;
+    other.start = null;
+    other.end = null;
+
+}
+
 
 
 
