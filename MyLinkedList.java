@@ -234,8 +234,20 @@ public void extend(MyLinkedList other){
         //in O(1) runtime, move the elements from other onto the end of this
         //The size of other is reduced to 0
         //The size of this is now the combined sizes of both original lists
-    if (other.size() > 0) {
-          end = other.getNthNode(0);
+    if (other.size() > 0) { // you will only need to add if other is not empty.
+
+      Node otherFirst = other.getNthNode(0);
+
+      if (size() > 0) { // normal procedure.
+        end.setNext(otherFirst);
+      } else { // if adding to an empty list
+        start = otherFirst;
+      }
+
+      //this happens no matter what.
+      end = other.end;
+      size += other.size();
+
     }
 
     other.size = 0;
@@ -250,6 +262,7 @@ public void extend(MyLinkedList other){
   public static void main(String[] args) {
 
     MyLinkedList teeth = new MyLinkedList();
+    System.out.println(teeth);
     teeth.add(1);
     teeth.add(3);
     teeth.add(6);
